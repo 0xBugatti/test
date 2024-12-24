@@ -7,7 +7,7 @@
 
 ## Detection Tools Installation
 - ### First Use Administrator Cmd
-  ![ssd](Imgs/Pastedimage20241223182554.png)
+  ![](Imgs/Pastedimage20241223182554.png)
 - ### Splunk Event Forwarder Installation
 	- Create Event Receiver Port On Splunk server 
 	- Run Receiver Event Forwarding on port `9997`
