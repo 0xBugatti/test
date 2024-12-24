@@ -7,29 +7,29 @@
 
 ## Detection Tools Installation
 - ### First Use Administrator Cmd
-  ![](Imgs\Pasted image 20241223182554.png)
+  ![](Imgs\Pastedimage20241223182554.png)
 - ### Splunk Event Forwarder Installation
 	- Create Event Receiver Port On Splunk server 
 	- Run Receiver Event Forwarding on port `9997`
-		![](Imgs\Pasted image 20241223190502.png)
+		![](Imgs\Pastedimage20241223190502.png)
 	- Install & Forward Events on the Splunk server IP,Port
 		```cmd
 		C:\lab\BlueTeamkit>msiexec.exe /i splunkforwarder-9.0.4-de405f4a7979-x64-release.msi  SPLUNKUSERNAME=SplunkAdmin SPLUNKPASSWORD=Ch@ng3d! RECEIVING_INDEXER="IP.IP.IP.IP:9997" WINEVENTLOG_SEC_ENABLE=1 WINEVENTLOG_SYS_ENABLE=1 AGREETOLICENSE=Yes /quiet
 		```
-	  ![](Imgs\Pasted image 20241223192301.png)
+	  ![](Imgs\Pastedimage20241223192301.png)
 	- Start Forwarding Windows Event Logs From Splunk
-		![](Imgs\Pasted image 20241223190739.png)
-		![](Imgs\Pasted image 20241223192639.png)
-		![](Imgs\Pasted image 20241223192828.png)
+		![](Imgs\Pastedimage20241223190739.png)
+		![](Imgs\Pastedimage20241223192639.png)
+		![](Imgs\Pastedimage20241223192828.png)
 - ### Sysmon
 	- #### Target Installation
-	  ![](Imgs\Pasted image 20241223182540.png)
+	  ![](Imgs\Pastedimage20241223182540.png)
 	- #### Splunk Integration
 		
 		- Edit Inputs File
 			In **`C:\Program File\SplunkUniversalForwarder\etc\system\default\inputs.conf `**
 			add some part
-			![](Imgs\Pasted image 20241223183116.png) 
+			![](Imgs\Pastedimage20241223183116.png) 
 		```txt
 		[WinEventLog://Microsoft-Windows-Sysmon/Operational]|
 		checkpointInterval = 5
@@ -39,14 +39,14 @@
 		```
 		 
 		- Final Result In SEIM
-		  ![](Imgs\Pasted image 20241222082057.png)
+		  ![](Imgs\Pastedimage20241222082057.png)
 - ### Suricata
 	- #### Target Installation
 		- File Download
 			[suricata.exe][https://www.openinfosecfoundation.org/download/windows/Suricata-7.0.8-1-64bit.msi]
-			![](Imgs\Pasted image 20241223183512.png)
+			![](Imgs\Pastedimage20241223183512.png)
 		- Install [Npcap](https://npcap.com/dist/npcap-1.80.exe)
-			![](Imgs\Pasted image 20241223192511.png)
+			![](Imgs\Pastedimage20241223192511.png)
 		- Rule Updater Module
 			- ##### Powershell Script
 			- ##### Schedule Task command
@@ -60,28 +60,28 @@
 
 		- Custom rules
 			- Adding Custom rules	
-				![](Imgs\Pasted image 20241223183811.png)
+				![](Imgs\Pastedimage20241223183811.png)
 			
 			- Creation of alerting file
 				You can Explore Logs Here
-				![](Imgs\Pasted image 20241223192132.png)
-				![](Imgs\Pasted image 20241223191721.png)
+				![](Imgs\Pastedimage20241223192132.png)
+				![](Imgs\Pastedimage20241223191721.png)
 	- #### Splunk Integration
 		- **Add fast.log Suricata File as New Forwarder** 
-			![](Imgs\Pasted image 20241223190739.png)
-			![](Imgs\Pasted image 20241223192639.png)
-			![](Imgs\Pasted image 20241223191921.png)
+			![](Imgs\Pastedimage20241223190739.png)
+			![](Imgs\Pastedimage20241223192639.png)
+			![](Imgs\Pastedimage20241223191921.png)
 		- **Dashboard Creation**
-		 ![](Imgs\Pasted image 20241222044206.png)
-		  ![](Imgs\Pasted image 20241222044204.png)
-		  ![](Imgs\Pasted image 20241222044128.png)
+		 ![](Imgs\Pastedimage20241222044206.png)
+		  ![](Imgs\Pastedimage20241222044204.png)
+		  ![](Imgs\Pastedimage20241222044128.png)
 - ### Saving Daily Secure BackUp
 	All is Done Now and All Detection Works 
 	**Taking Snapshot**
-	![](Imgs\Pasted image 20241222021105.png)
+	![](Imgs\Pastedimage20241222021105.png)
 - ### Combine & Run All
 	Using **Services**
-	![](Imgs\Pasted image 20241223194411.png)
+	![](Imgs\Pastedimage20241223194411.png)
 
 ## All Is Done Now Lets start Gaming
 ---
@@ -90,13 +90,13 @@
 From :  `financial-team.maher.operationalfocus@outlook.com`
 to : `sales-team.myassen@outlook.com`
 
-![](Imgs\Pasted image 20241222043223.png)
-![](Imgs\Pasted image 20241222042721.png)
+![](Imgs\Pastedimage20241222043223.png)
+![](Imgs\Pastedimage20241222042721.png)
 **Invoice  Notes** 
 - pdf extension manipulation using double extension technique
 - Abusing Microsoft Collaboration Tools (OneDrive) by Hosting on it 
 	`https://onedrive.live.com/?cid=153FC99CB596A0A2&id=153FC99CB596ADA29621s2df3d182e1c467a810bSaSbddf8f043&parld=153FC99CB596ADA2%21s3d8648ccSef34f2598d772f44d152Bae&e=OneUp`
-	![](Imgs\Pasted image 20241222043140.png)
+	![](Imgs\Pastedimage20241222043140.png)
 
 ## Compromised Host Info
 
@@ -109,7 +109,7 @@ to : `sales-team.myassen@outlook.com`
 # Incident Summery 
 ### Some Alert Hit on Suricata Customized Zeus Rules 
 Alerts Related to Suspicious **DNS** ,**Http** Requests Query to suspicious IP
-![](Imgs\Pasted image 20241222083010.png)
+![](Imgs\Pastedimage20241222083010.png)
 
 ### Starting Investigation to find Initiative Process
 - Using  **Sysmon** we start Investigation on **`Process Create`** Event 
@@ -122,7 +122,7 @@ index = "main" hast-"COHP10" earliest =- 4am latest =- 10m | where match(SourceN
 
 ```
 
-![](Imgs\Pasted image 20241222045715.png)
+![](Imgs\Pastedimage20241222045715.png)
 
 
 - We Found Some Suspicious process using  **double extension naming technique** which is IOA **`C:\Users\student\Downloads\invoce_2318362983713_823931342io.pdf.exe`**
@@ -132,14 +132,14 @@ index = "main" hast-"COHP10" earliest =- 4am latest =- 10m | where match(SourceN
 index = "main" host="COMP10" earliest =- 40m latest =- 10m | 
 	match(Sourcellane, "Sysmon") | where match(Image, "pdf.exe")
 		```
-	![](Imgs\Pasted image 20241222050118.png)
+	![](Imgs\Pastedimage20241222050118.png)
 ### Investigation Findings
 #### Network Investigation 
 - Observed DNS Connection to IP `85.114.128.127` from 
 	 
-	 ![](Imgs\Pasted image 20241223223830.png)
+	 ![](Imgs\Pastedimage20241223223830.png)
 - Search IP on ThreatIntel	 
-	 ![](Imgs\Pasted image 20241223224322.png)
+	 ![](Imgs\Pastedimage20241223224322.png)
 #### Endpoint Investigation
 - ##### Processes Information
 	- SEIM Query 
@@ -152,7 +152,7 @@ index = "main" host="COMP10" earliest =- 40m latest =- 10m |
 		| table TaskCategory, host, ComputerName, Image, ProcessId, CommandLine, ParentProcessId, ParentCommandLine, MD5, TargetFilename, TargetObject
 
 		```
-		![](Imgs\Pasted image 20241223221722.png)
+		![](Imgs\Pastedimage20241223221722.png)
 	- Processes Tree
 		`explorer.exe>invoice_2318362983713_823931342io.pdf.exe >cmd.exe,InstallFlashPalyer.exe`
 		**invoice_2318362983713_823931342io.pdf.exe** 
@@ -161,14 +161,14 @@ index = "main" host="COMP10" earliest =- 40m latest =- 10m |
 		`Parent ID` 2376
 		`File Path ` C:\Users\student\Downloads\invoice_2318362983713_823931342io.pdf.exe
 		`File Hash ` : EA039A854D20D7734C5ADD48F1A51C34
-		![](Imgs\Pasted image 20241224133737.png)
+		![](Imgs\Pastedimage20241224133737.png)
 		**InstallFlashPalyer.exe**
 		`Process ID 7` 7816
 		`Parent Process` C:\Users\student\Downloads\invoice_2318362983713_823931342io.pdf.exe
 		`Parent ID` 1756
 		`File Path `	C:\Users\student\AppData\Local\Temp\InstallFlashPlayer.exe
 		`File Hash ` : 2FF9B590342C62748885D459D082295F
-		![](Imgs\Pasted image 20241224133828.png)
+		![](Imgs\Pastedimage20241224133828.png)
 		`Reputation`
 
 - ##### Process Activities 
@@ -181,7 +181,7 @@ index = "main" host="COMP10" earliest =- 40m latest =- 10m |
 		| rex field=Hashes "MD5=(?<MD5>[a-fA-F0-9]{32})" 
 		| table TaskCategory, host, ComputerName,Image,ProcessId,TargetFilename,TargetObject,MD5
 		```
-		![](Imgs\Pasted image 20241223222221.png)
+		![](Imgs\Pastedimage20241223222221.png)
 	- Created Regs
 	  ```sql
 		index="main" host="COMP10" 
@@ -191,7 +191,7 @@ index = "main" host="COMP10" earliest =- 40m latest =- 10m |
 		| rex field=Hashes "MD5=(?<MD5>[a-fA-F0-9]{32})" 
 		| table TaskCategory, host, ComputerName,Image,ProcessId,TargetFilename,TargetObject,MD5
 		```
-		![](Imgs\Pasted image 20241223222513.png)
+		![](Imgs\Pastedimage20241223222513.png)
 
 		>Created Files
 		
@@ -279,7 +279,7 @@ This step focuses on stopping the spread of the attack and limiting its damage.
 
 
 - **Short-term containment**: Isolate affected systems (e.g., unplug from the network, disable accounts). via EDR / Live Response
-	![](Imgs\Pasted image 20241222052804.png)
+	![](Imgs\Pastedimage20241222052804.png)
 - **Long-term containment**: Set up temporary solutions, such as deploying new firewalls or network segments.
 - Block malicious domains, IPs, and email addresses in firewalls or DNS settings.
   Here We Don't Need Logging Utils such sysmon,suricata 
@@ -312,7 +312,7 @@ In this phase, you remove the threat from your environment to prevent further co
 
 The goal of this step is to restore normal operations while ensuring the environment is secure.
 
-![](Imgs\Pasted image 20241222084129.png)
+![](Imgs\Pastedimage20241222084129.png)
 
 - Rebuild or restore affected systems from clean backups.
 - Verify that all systems are functioning properly and securely.
@@ -392,25 +392,25 @@ The goal of this step is to restore normal operations while ensuring the environ
 
 ### Dynamic Malware Analysis
 #### Process
-![](Imgs\Pasted image 20241224144037.png)
+![](Imgs\Pastedimage20241224144037.png)
 #### Process Activities
-![](Imgs\Pasted image 20241224144509.png)
+![](Imgs\Pastedimage20241224144509.png)
 - Process Added to Sturup
 - Network Connection
 - Executable File Dropped
-![](Imgs\Pasted image 20241224144452.png)
+![](Imgs\Pastedimage20241224144452.png)
 - Integrity Level Elevation
 - Network Connection
-![](Imgs\Pasted image 20241224144306.png)
-![](Imgs\Pasted image 20241224144322.png)
+![](Imgs\Pastedimage20241224144306.png)
+![](Imgs\Pastedimage20241224144322.png)
 #### Process Connection 
-![](Imgs\Pasted image 20241224144829.png)
+![](Imgs\Pastedimage20241224144829.png)
 
 #### Network DNS Requests 
-![](Imgs\Pasted image 20241224144817.png)
-![](Imgs\Pasted image 20241224144821.png)
+![](Imgs\Pastedimage20241224144817.png)
+![](Imgs\Pastedimage20241224144821.png)
 #### Network HTTP Requests
-![](Imgs\Pasted image 20241224145018.png)
+![](Imgs\Pastedimage20241224145018.png)
 
 ## Short Endpoint Forensics Hands-On
 Here We Will not Deepdive on All Forensics Lifecycle 
@@ -429,53 +429,53 @@ pip install volatility3
 sudo vol -f  zeus2x4.vmem windows.info
 ```
 
-![](Imgs\Pasted image 20241222204650.png)
+![](Imgs\Pastedimage20241222204650.png)
 
 **Listing All Assigned Security Privileges**
 ```bash
 sudo vol -f zeus2x4.vmem   windows.privileges.Privs
 ```
-![](Imgs\Pasted image 20241222205104.png)
+![](Imgs\Pastedimage20241222205104.png)
 
 **Listing All Created Files**
 ```bash
 sudo vol -f zeus2x4.vmem   windows.filescan.FileScan
 ```
 
-![](Imgs\Pasted image 20241222092851.png)
+![](Imgs\Pastedimage20241222092851.png)
 
 
 **Listing All loaded Dlls**
 ```bash
 sudo vol -f zeus2x4.vmem   windows.dlllist.DllList
 ```
-![](Imgs\Pasted image 20241222205523.png)
+![](Imgs\Pastedimage20241222205523.png)
 **Listing all Running Services**
 
 ```bash
 sudo vol -f zeus2x4.vmem   windows.svcscan.SvcScan
 ```
 
-![](Imgs\Pasted image 20241222205606.png)
+![](Imgs\Pastedimage20241222205606.png)
 **Listing All Loaded Drivers**
 ```bash
 sudo vol -f zeus2x4.vmem   windows.dricverscan.DriverScan
 ```
 
-![](Imgs\Pasted image 20241222205428.png)
+![](Imgs\Pastedimage20241222205428.png)
 ##### Get All Executed Processes
 ```bash
 sudo vol -f zeus2x4.vmem   windows.psscan.PsScan
 
 ```
 
-![](Imgs\Pasted image 20241222204424.png)
+![](Imgs\Pastedimage20241222204424.png)
 ```bash
 sudo vol -f zeus2x4.vmem   windows.cmdline.Cmdline
 
 ```
 
-![](Imgs\Pasted image 20241222204937.png)
+![](Imgs\Pastedimage20241222204937.png)
 
 
 ##### Get Detailed Process Tree
@@ -484,7 +484,7 @@ sudo vol -f zeus2x4.vmem   windows.pstree.Pstree
 
 ```
 
-![](Imgs\Pasted image 20241222205023.png)
+![](Imgs\Pastedimage20241222205023.png)
 
 
 
@@ -494,7 +494,7 @@ sudo vol -f zeus2x4.vmem  -o ./procdump windows.memmap.Memmap --pid 3276 --dump
 
 ```
 
-![](Imgs\Pasted image 20241222204850.png)
+![](Imgs\Pastedimage20241222204850.png)
 ##### Dump Files of Malicious Process
 
 
@@ -503,7 +503,7 @@ sudo vol -f zeus2x4.vmem  -o ./procdump windows.memmap.Memmap --pid 3276 --dump
 ```
 
 
-![](Imgs\Pasted image 20241222075009.png)
+![](Imgs\Pastedimage20241222075009.png)
 ##### Malicious Memory Activity Checking
 
 **MalFind** 
@@ -511,13 +511,13 @@ sudo vol -f zeus2x4.vmem  -o ./procdump windows.memmap.Memmap --pid 3276 --dump
 sudo vol -f .. / .. /zeus2x4.vmem windows.malfind. Malfind
 ```
 	
-![](Imgs\Pasted image 20241222204555.png)
+![](Imgs\Pastedimage20241222204555.png)
 **Process Hollow**
  ```bash
  sudo vol -f zeus.vmem windows.hollowprocess.HollowProcess
 ```
 
-![](Imgs\Pasted image 20241222071228.png)
+![](Imgs\Pastedimage20241222071228.png)
 
 **SupsiciousThreads**
 
@@ -526,7 +526,7 @@ sudo vol -f zeus2x4.vmem   windows.suspicious_threads.SupsiciousThreads
 ```
 
 
- ![](Imgs\Pasted image 20241222205300.png)
+ ![](Imgs\Pastedimage20241222205300.png)
 
 # Threat Intelligence
 ## Adding IOCs to your SOC DB
@@ -537,14 +537,14 @@ Using `YarGen` for Generating Rules and IOCs Based on Collected Evidences from D
 python yargen.py -m /home/CollectedInfo/Zeus -o ../Zeus/Updated-IOC.rules
 ```
 
-![](Imgs\Pasted image 20241222064324.png)
+![](Imgs\Pastedimage20241222064324.png)
 
 ### YARA Rules Testing
 #### Testing IOC Detection Result on Malicious File
-![](Imgs\Pasted image 20241222064338.png)
+![](Imgs\Pastedimage20241222064338.png)
 #### Testing IOC Detection Result on Memory Dump
-![](Imgs\Pasted image 20241223184205.png)
+![](Imgs\Pastedimage20241223184205.png)
 
 #### Documenting Tested IOCs
 
-![](Imgs\Pasted image 20241222085544.png)
+![](Imgs\Pastedimage20241222085544.png)
